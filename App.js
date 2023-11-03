@@ -1,5 +1,6 @@
 import React from "react"
 import  ReactDOM  from "react-dom/client"
+import "./index.css"
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
     React.createElement("p" , {id : "child1"} , "This is Child1"),
@@ -20,21 +21,23 @@ const header = React.createElement("div" , {id:"wrapper"} , [
 //Defining a Jsx
 const headingFromJsx = (
        <div>
-            <h1>This is Header From jsx</h1>
+            <h1 className="head">This is Header From jsx</h1>
             <p>This is Para from jsx</p>
        </div>
 )
 
 //Defining a React Component
 const HeadingComponent = ()=>{
-    return(
-        <>
-           This is HeaderComponent JSX
-        </>
+    return (
+        <> This is HeaderComponent JSX </>
     )
 }
 
 
 const roots = ReactDOM.createRoot(document.getElementById("root"))
 
-roots.render(HeadingComponent())
+console.log(roots)
+
+// roots.render(HeadingComponent())
+roots.render(<HeadingComponent/>)
+// roots.render(<HeadingComponent></HeadingComponent>)
