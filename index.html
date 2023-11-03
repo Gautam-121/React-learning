@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste India with HTML</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
+    <!-- This is Firt Way To Add Anything On Page -->
+    <div>Namaste India KemCho BhaiLog</div>
+    <!-- Using Javascript Add Thing In Html Page -->
+    <div id="heading">
+    </div>
+
+    <!-- third Way using React To Add Anything inside html Using Cdn-->
+    <div id="root">
+        <h1>My Name is Gautam</h1>
+    </div>
+
+    <script>
+        const heading = document.createElement("h1")
+        heading.innerHTML = "This is Heading"
+        const root = document.getElementById("heading")
+        root.appendChild(heading)
+    </script>
+
+    <script type="module" src="App.js"></script>
+</body>
+</html>
