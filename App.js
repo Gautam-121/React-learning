@@ -1,6 +1,7 @@
 import React from "react"
 import  ReactDOM  from "react-dom/client"
 import "./index.css"
+import PractiseState from "./componets/PracticeState"
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
     React.createElement("p" , {id : "child1"} , "This is Child1"),
@@ -27,9 +28,12 @@ const headingFromJsx = (
 )
 
 //Defining a React Component
-const HeadingComponent = ()=>{
+const HeadingComponent = ({name , age })=>{
+
     return (
-        <> This is HeaderComponent JSX </>
+        <div> 
+            This is HeaderComponent JSX by {name} {age} 
+        </div>
     )
 }
 
@@ -38,6 +42,36 @@ const roots = ReactDOM.createRoot(document.getElementById("root"))
 
 console.log(roots)
 
+const datas = [
+    {
+        id : 1,
+        name : "Guatam",
+        age : "23"
+    },
+    {
+        id : 2,
+        name : "Sandhya",
+        age : "24"
+    },
+    {
+        id : 3,
+        name : "Rohit",
+        age : "27"
+    }
+]
+
+const Applayout = ()=>{
+    return(
+       <>
+           {
+            datas.map(data=>(
+                <HeadingComponent key={data.id} {...data}/>
+            ))
+           }
+       </>
+    )
+}
+
 // roots.render(HeadingComponent())
-roots.render(<HeadingComponent/>)
+roots.render(<PractiseState/>)
 // roots.render(<HeadingComponent></HeadingComponent>)
