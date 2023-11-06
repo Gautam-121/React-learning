@@ -1,0 +1,10 @@
+
+.inputForm{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+input{
+    padding: 15px;
+    margin: 10px 0px;
+}

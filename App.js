@@ -5,6 +5,7 @@ import Home from "./component/home"
 import About from "./component/about"
 import Skill from "./component/skill"
 import { createBrowserRouter , RouterProvider   } from "react-router-dom"
+import SignIn from "./component/signIn"
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
     React.createElement("p" , {id : "child1"} , "This is Child1"),
@@ -82,6 +83,6 @@ const roots = ReactDOM.createRoot(document.getElementById("root"))
 
 // roots.render(HeadingComponent())
 // roots.render(<RouterProvider router={userRouting}/>)
-roots.render(<HeadingComponent/>)
+roots.render(<SignIn/>)
 // roots.render(headingFromJsx)
 // roots.render(<HeadingComponent></HeadingComponent>)
