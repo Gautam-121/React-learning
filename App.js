@@ -1,6 +1,10 @@
 import React from "react"
 import  ReactDOM  from "react-dom/client"
 import "./index.css"
+import Home from "./component/home"
+import About from "./component/about"
+import Skill from "./component/skill"
+import { createBrowserRouter , RouterProvider   } from "react-router-dom"
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
     React.createElement("p" , {id : "child1"} , "This is Child1"),
@@ -29,15 +33,55 @@ const headingFromJsx = (
 //Defining a React Component
 const HeadingComponent = ()=>{
     return (
-        <> This is HeaderComponent JSX </>
+        <div> This is HeaderComponent JSX </div>
     )
 }
+
+const Header = ()=> {
+    return <h1 className="heading">This is Header</h1>
+}
+
+const Header1 = ()=> (
+     <h1 className="heading">This is Header</h1>
+)
+
+const Container = ()=>(
+    <div>
+        <Header/>
+        <Header1/>
+        <div className="conta_child_3">Component Composition</div>
+        {headingFromJsx}
+        {"Put Any Js Code inside Jsx Using curly Braces" + 200 + 300}
+        {console.log("Console inside from The Container")}
+    </div>
+)
+
+const userRouting = createBrowserRouter([
+    {
+        path : "/",
+        element : <HeadingComponent/>,
+        children : [
+            {
+                path : "/home",
+                element : <Home/>
+            },
+            {
+                path : "/about",
+                element : <About/>
+            },
+            {
+                path : "/skill",
+                element : <Skill/>
+            }
+        ]
+    }
+])
 
 
 const roots = ReactDOM.createRoot(document.getElementById("root"))
 
-console.log(roots)
-
 // roots.render(HeadingComponent())
+// roots.render(<RouterProvider router={userRouting}/>)
 roots.render(<HeadingComponent/>)
+// roots.render(headingFromJsx)
 // roots.render(<HeadingComponent></HeadingComponent>)

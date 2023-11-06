@@ -85,3 +85,5 @@ after getting response in preflight request according to that it will throght er
 
 if domain B not allow to this Origin Browser throught the Cors error
 if domain B allow the access then actual request made and get all user detail .
+
+# What is Async and Defer
