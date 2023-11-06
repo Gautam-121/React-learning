@@ -1,0 +1,26 @@
+.appForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    flex-direction: column;
+}
+
+form{
+    width: 25%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black ;
+    margin-top: 25px;
+}
+
+button{
+    display: block;
+    width: 95%;
+    padding: 10px;
+    background-color: rgb(59, 59, 208);
+    color: white;
+    border-radius: 10px;
+    margin: auto 10px;
+}
+
