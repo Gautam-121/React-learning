@@ -1,7 +1,7 @@
 import { useState } from "react";
-import InputForm from "./inputForm";
-import "./appForm.css";
-import {userInput} from "../constant.js"
+import InputForm from "./inputForm.jsx";
+import "./signIn.css";
+import {userInput} from "../../constant.js"
 
 const SignIn = () => {
 
