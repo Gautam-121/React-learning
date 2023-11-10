@@ -1,12 +1,12 @@
 import React from "react"
 import  ReactDOM  from "react-dom/client"
 import "./index.css"
-import Home from "./component/home"
-import About from "./component/about"
-import Skill from "./component/skill"
+import Home from "../component/home"
+import About from "../component/about"
+import Skill from "../component/skill"
 import { createBrowserRouter , RouterProvider   } from "react-router-dom"
-import SignIn from "./component/signIn/signIn"
-import Header from "./component/header/header"
+import SignIn from "../component/signIn/signIn"
+import Header from "../component/header/header"
 
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [

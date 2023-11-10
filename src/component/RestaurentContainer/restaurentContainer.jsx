@@ -1,6 +1,6 @@
 import "./restaurentContainer.css"
 import RestaurentCart from "./RestaurentCart/restaurentCart"
-import { restaurants } from "../../constant"
+import { restaurants } from "../../../constant"
 
 
 const RestaurentContainer = ()=>{
