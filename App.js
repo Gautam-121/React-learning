@@ -6,6 +6,8 @@ import About from "./component/about"
 import Skill from "./component/skill"
 import { createBrowserRouter , RouterProvider   } from "react-router-dom"
 import SignIn from "./component/signIn/signIn"
+import Header from "./component/header/header"
+
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
     React.createElement("p" , {id : "child1"} , "This is Child1"),
