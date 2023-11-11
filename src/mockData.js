@@ -52,6 +52,38 @@ export const userInput = (values)=>{
     return inputs
 }
 
+export const navList =  [
+    {
+        id : 1,
+        linkOpen : "/search",
+        listName : "Search",
+        symbol_logo : <i class="fa-solid fa-magnifying-glass"></i>
+    },
+    {
+        id : 2,
+        linkOpen : "/offers-near-me",
+        listName : "Offers",
+        symbol_logo : <i class="fa-solid fa-percent"></i>
+    },
+    {
+        id : 3,
+        linkOpen : "/support",
+        listName : "Help",
+        symbol_logo : <i class="fa-solid fa-life-ring"></i>
+    },
+    {
+        id : 4,
+        linkOpen : "",
+        listName : "Sign In",
+        symbol_logo : <i class="fa-regular fa-user"></i>
+    },
+    {
+        id : 5,
+        linkOpen : "/checkout",
+        listName : "Cart",
+        symbol_logo : <i class="fa-solid fa-cart-shopping"></i>
+    },
+]
 export const restaurants = [
   {
       "info": {

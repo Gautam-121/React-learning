@@ -1,5 +1,5 @@
 import "./restaurentCart.css";
-import { CDN_URL } from "../../../utils/constant";
+import { CDN_URL } from "../../../../utils/constant";
 
 const RestaurentCart = ({
   name,
@@ -16,6 +16,7 @@ const RestaurentCart = ({
         <img
           src={CDN_URL+cloudinaryImageId}
           alt="this is img"
+          width="200px"
         />
         {/* Put AggreGationDiscountInfo if it is True */}
       </div>
@@ -23,9 +24,9 @@ const RestaurentCart = ({
         <div className="restaurent_name_rating_wrapper">
           <p>{name}</p>
           <div className="_restaurent_info_wrapper">
-            <span>⭐{avgRating}</span>
+            <p>⭐{avgRating}</p>
             <spam>.</spam>
-            <span>{sla.deliveryTime} mins</span>
+            <p>{sla.deliveryTime} mins</p>
           </div>
         </div>
         <div className="restaurent_cusines">
