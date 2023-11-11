@@ -1,4 +1,5 @@
 import "./restaurentCart.css";
+import { CDN_URL } from "../../../utils/constant";
 
 const RestaurentCart = ({
   name,
@@ -13,10 +14,7 @@ const RestaurentCart = ({
     <div className="restaurentCart_wrapper">
       <div className="img_wrapper">
         <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/" +
-            cloudinaryImageId
-          }
+          src={CDN_URL+cloudinaryImageId}
           alt="this is img"
         />
         {/* Put AggreGationDiscountInfo if it is True */}

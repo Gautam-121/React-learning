@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputForm from "./inputForm.jsx";
 import "./signIn.css";
-import { userInput } from "../../../constant.js";
+import { userInput } from "../../mockData.js"
 
 const SignIn = () => {
   const [values, setValues] = useState({
