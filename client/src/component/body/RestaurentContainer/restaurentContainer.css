@@ -1,8 +1,9 @@
 .restaurentContainer_wrapper{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
+    justify-content: space-between;
     margin: auto;
+    margin-top: 2rem;
     background-color: #ffffff;
-    margin-top: 1rem;
+    margin-right: 1rem;
 }

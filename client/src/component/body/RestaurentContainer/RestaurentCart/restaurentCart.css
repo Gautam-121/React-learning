@@ -1,0 +1,93 @@
+.restaurentCart_wrapper{
+    /* border: 1px solid red; */
+    width: 250px;
+    height: 270px;
+    margin:0.5rem 0rem;
+    margin-right: 1rem;
+}
+
+.restaurentCart_wrapper:hover{
+    cursor: pointer;
+    width: 250px;
+    height: 270px;
+    margin:0.5rem 0rem;
+    margin-right: 1rem;
+    padding: 3px;
+}
+
+img{
+    width: 100%;
+    height: 160px;
+    border-radius: 1rem;
+}
+
+.restaurent_info_wrapper{
+    margin:5px 0px 0px 12px;
+    /* border: 2px solid green; */
+}
+
+.res_name{
+    font-size: 1.1rem;
+    font-weight: 700;
+    overflow: hidden;
+    width: 100%;
+    line-height: 1.5rem;
+    letter-spacing: -0.3px;
+    color: rgba(2 ,6 , 12 , 0.75);
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.rating{
+    margin-top: 2.5px;
+    margin-left: 2px;
+    color: rgba(2 ,6 , 12 , 0.75);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.restaurent_info_wrapper_time{
+    display: grid;
+    align-items: center;
+    row-gap: 2px;
+    column-gap: 2px;
+    grid-auto-flow: column;
+    justify-content: start;
+    font-size: 1rem;
+    margin-top: -0.3rem;
+    /* border: 1px solid; */
+}
+
+.restaurent_cusines{
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.1rem;
+    letter-spacing: -0.3px;
+    color: rgba(2 , 6 , 12 , 0.6);
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    margin-bottom: 5px;
+    padding-left: 2px;
+}
+
+.location{
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.1rem;
+    letter-spacing: -0.3px;
+    color: rgba(2 , 6 , 12 , 0.6);
+}
+
+.rating_symbol{
+    color: green;
+}
+
+.delivery_time{
+    margin-top: 2px;
+    padding: 5px;
+    color: rgba(2 ,6 , 12 , 0.75);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
