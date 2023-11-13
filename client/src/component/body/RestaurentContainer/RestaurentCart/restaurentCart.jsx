@@ -8,7 +8,7 @@ const RestaurentCart = ({
   avgRating,
   cuisines,
   aggregatedDiscountInfoV2,
-  sla,
+  deliveryTime,
 }) => {
   return (
     <div className="restaurentCart_wrapper">
@@ -23,7 +23,7 @@ const RestaurentCart = ({
           <div className="restaurent_info_wrapper_time">
             <i class="fa-solid fa-star rating_symbol"></i>
             <p className="rating">{avgRating}</p>
-            <p className="delivery_time">{sla.deliveryTime} mins</p>
+            <p className="delivery_time">{deliveryTime} mins</p>
           </div>
         <div className="restaurent_cusines">
           <p>{cuisines.join(", ")}</p>

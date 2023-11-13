@@ -13,8 +13,8 @@ process.on("uncaughtException" , (error)=>{
 //Database Connectivity
 connection()
 
-const server = app.listen(process.env.PORT || 3000 , ()=>{
-    console.log(`listening on Port ${process.env.PORT || 3000}`)
+const server = app.listen(3000 , ()=>{
+    console.log(`listening on Port ${3000}`)
 })
 
 // Handled unhandled Promised Rejection
