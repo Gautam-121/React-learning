@@ -3,6 +3,7 @@ import  ReactDOM  from "react-dom/client"
 import "../index.css"
 import Header from "../src/component/header/header"
 import Body from "./component/body/body"
+import SignIn from "../src/component/signIn/signIn"
 
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [

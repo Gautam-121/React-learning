@@ -16,6 +16,7 @@ const RestaurentCart = ({
           src={CDN_URL+cloudinaryImageId}
           alt="this is img"
           width="200px"
+          loading="lazy"
         />
         {/* Put AggreGationDiscountInfo if it is True */}
       <div className="restaurent_info_wrapper">

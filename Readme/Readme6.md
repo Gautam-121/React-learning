@@ -50,4 +50,141 @@ const fetchData = async()=>{
 
 # Unless we have a data insteat a rendering black page i want to render shimmer Ui This Loading Ui called as Shimmeer UI
 
-# Shimmer Ui --> SShimmer Ui resembled the page as actual Ui , so User will Understand how quickly the web or mobile app load
+# What is Shimmer Ui --> Shimmer Ui resembled the page as actual Ui , so User will Understand how quickly the web or mobile app load
+
+# Conditional Rendering --> Rendered A component on the basis of condtion is called conditional Rendering
+
+# How we have change const varible but it not give btnNameReact is constant variable
+
+- When state variable changes it re-rendered the component and it not refresh the whole component it trigger the diff agorithm finding the difference between new vd and old vd and make changes on the perticular node it find difference
+
+- basically it not give any error because of at each rendered the btnNameReact is new variable not the older variable and it contain the updated value
+
+const Header = ()=>{
+    const [btnNameReact , setBtnNameReact] = useState("Login")
+    return(
+        <div>This is Header {btnNameReact}</div>
+    )
+}
+
+const [searchText , setSearchText] = useState("")
+<input type="text" className="search-box" value={searchText}/>
+
+we have bind with input value with state-variable , when we bind input value with
+state-varible , when its presses key it not affect it not seen key press because i have strict my value of input box with state varible , so if i wnat to sho key press so i wnat to update my state-variable at each key press and bind my input value with updated state variable 
+
+For resolving this issue , onChange event comes into the picture , it will update my state variable at each key press
+
+<input type="text" className="search-box" value={searchBox} onChange=((e)=>{
+    setSearchText(e.target.value)
+})/>
+When-ever you change the state-variable react will re-rendered the component ,
+so at each key press my searchText state-variable change and it will re-rendered the component
+
+# Whenever state variable update , react trigger reconcialliation cycle(re-render the component)
+
+# What is Monolithic Architecture
+- As the name suggest mono(means single) jang container in which whole application or system resides
+
+- Advantages
+  - Low Complexity
+  - Easy To Deployed
+ 
+- Disadvantages
+   - Rigidness
+   - Hard To Scale *
+   - Slow Performance *
+   - Single Point OF Failure *
+   - Slow Continuous Developement
+
+# What is Microservices Architecture
+- As the name suggest it break your application into small small services and this services are very lossely coupled
+
+- All Services are working independently because all this are microservices , this can be deployed seperatly and can be access through the API-GATEWAY
+
+# WHAT IS  API-GATEWAY
+- When client send a request it acts as a entry point , this entry point find what is the exact request user is sending and based on user request to find which services and api cattered to that services
+
+API-GATEWAY acts as a interface between users and loosely coupled micro-services
+
+- Advantages
+  - Loosely Coupled
+  - Agile and Flexible
+  - Independent Development
+  - Independent Depluoment
+  - Fault Isolation
+  - Mixed Technology Stack
+  - Granular and Scalling
+
+- Disadvantages
+  - High Complexity
+  - consistency
+  - Automation
+  - Debuging 
+
+Monolithic and Microservices both exist , both have there advantages as well as disadvantages , but the new era moving toward the micoservices architecture
+
+basically depending on business useCase we decides wich architecture we have used , if the project has small , there are less number of developer working on it there are less deployed go to monolithic architecture 
+but but , your application is much bigger as amazon , microsoft , nrtflix go to microservices architecture , it has own disavantages but we can rectified this disadvantage using KUBERNATIVE AND CONTAINER
+
+# Why do we need a useEffect Hook?
+- basically if i want to something run after component rendered , the useEffect hook comes into the picture
+
+- Example :- i want my restaurent component render with some static data as soon as my component rendered completely i wnat to call my api to fetch restaurent data , so in that used case we need useEffect hook , after api cal i have update my state-varible so as the state varible update it trigger the reconcillation and re-rendered the component
+
+useEffect(()=>{
+
+},[])
+
+1) useEffect takes two argument 1. callback function 2. dependency array
+
+what is Dependency Array?
+ - as the name suggest dependency , that means in which state varible our useEffect depend when it when useEffect callback function called
+
+1) what does when you add Empty Dependency array?
+useEffect(()=>{
+
+},[])
+- When you add empty dependany array , useEffect called once and it called after the initial render
+
+2) what does when you add state variable in dependency array?
+useEffect(()=>{
+
+},[searchRext,userProfile])
+
+so useEffect called once the initial rendering and each times when my (searchText and userProfile) state Variable changes
+
+3) what does when you not add dependency array in useEffect()?
+useEffect(()=>{
+
+})
+it will called once after initial rendering and call each time when my component rendered but after the component render
+
+# What is Optional Chaining operator?
+- basically Optional chaining is Operation of javascript , it check nested value of object it found return this value otherwise return undefined , not throughing the error
+
+ex: const obj = {
+    name : {
+        game : {
+            kame : "Kamal"
+        }
+    }
+}
+
+console.log(obj.kame.game) without optional chaining it througing the error because it try to find value inside the obj.kame ==> usndefined.game ==> through error
+
+but using Optional chaining it returning undefined rather that the throwing error
+console.log(obj?.kame?.game)
+
+
+# What is Async Await
+ - Basically Async Await handled the promises in synchronous manner
+we make our code async and tell to the code , hey wait upto our response not resolve as the promise resolved we moved farword
+
+# What is the use of const json = await data.json()
+
+const data = await fetch("http://localhost:8081/api/v1/getRestaurent)
+
+when we calling the fetch with api , it returened response body it in readabme stream , if i wnat to change this readable stream to json we used this line of code
+
+const json = await data.json()
