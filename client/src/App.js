@@ -3,7 +3,12 @@ import  ReactDOM  from "react-dom/client"
 import "../index.css"
 import Header from "../src/component/header/header"
 import Body from "./component/body/body"
-import SignIn from "../src/component/signIn/signIn"
+import Search from "./component/search/search"
+import Help from "./component/help/help"
+import Offers from "./component/offers/offers"
+import Cart from "./component/cart/cart"
+import Error from "./component/error/error"
+import {createBrowserRouter , RouterProvider , Outlet} from "react-router-dom"
 
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
@@ -97,11 +102,41 @@ const Applayout = ()=>{
     return(
        <>
          <Header/>
-         <Body/>
+         <Outlet/>
        </>
     )
 }
 
+const appRouter = createBrowserRouter([
+    {
+        path : "/",
+        element : <Applayout/>,
+        children : [
+            {
+                path : "/",
+                element : <Body/>
+            },
+            {
+                path : "/search",
+                element : <Search/>
+            },
+            {
+                path : "/offers-near-me",
+                element : <Offers/>
+            },
+            {
+                path : "/support",
+                element : <Help/>
+            },
+            {
+                path : "/checkout",
+                element : <Cart/>
+            }
+        ],
+        errorElement : <Error/>
+    }
+])
+
 // roots.render(HeadingComponent())
-roots.render(<Applayout/>)
+roots.render(<RouterProvider router={appRouter}/>)
 // roots.render(<HeadingComponent></HeadingComponent>)

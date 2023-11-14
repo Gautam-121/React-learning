@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./header.css";
-import SearchBar from "./searchBar/searchBar";
+import { Link } from "react-router-dom";
 import { navList } from "../../mockData";
 import NavigationBar from "./navigationBar/navigationBar";
 
@@ -30,9 +30,9 @@ const Header = () => {
         onMouseLeave={() => setFocused(false)}
       >
         <div className="logo_wrapper">
-          <a href="/">
+          <Link to="/">
             <div className="logo"></div>
-          </a>
+          </Link>
         </div>
         <div className="dropDown_location">
           <p className={focused ? "location_area_hover" : "location_area"}>
