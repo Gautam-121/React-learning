@@ -8,6 +8,7 @@ import Help from "./component/help/help"
 import Offers from "./component/offers/offers"
 import Cart from "./component/cart/cart"
 import Error from "./component/error/error"
+import RestaurentMenu from "./component/body/RestaurentMenu/restaurentMenu"
 import {createBrowserRouter , RouterProvider , Outlet} from "react-router-dom"
 
 
@@ -131,6 +132,10 @@ const appRouter = createBrowserRouter([
             {
                 path : "/checkout",
                 element : <Cart/>
+            },
+            {
+                path : "/restaurent/:resId",
+                element : <RestaurentMenu/>
             }
         ],
         errorElement : <Error/>

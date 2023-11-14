@@ -145,3 +145,25 @@ import {Link} from "react-router-dom"
 # When We used Link
  - it not refresh the page or reload the page but the refresh the component it jsut changes the component that why we come to important thing , that our react-application is known as single page application
  only it changes here and there component not reload or refresh the page
+
+ # There are Two type of Routing in web Application 
+  - Client Side Routing - Right now we have doing in client side routing because we not making any network call for fetching a page , all the component are already loaded on my app when click to load about.html to quicly refresh the component here and there.
+
+  - Server Side Routing - Means you make you make a network call and the page aboutUs.html coming from server , that server side routing
+
+
+  # Dynamic Routing
+   {
+        path : "/restaurent/:resId", (always show restaurentMenu basis of resId )
+        element : <RestaurentMenu/>
+    }
+
+# How i read this dynamic resId in my component RestaurentMenu?
+- Again we have superPower that react-router gives to us to used what is there in there params
+
+import {useParams} from "react-router-dom"
+
+Link begind the seen it use Anchor Tag at the end of the day is nothing bhu a anchor tag
+
+
+const {resId} = useParams() --> this resId contain dynamic param value
