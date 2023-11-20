@@ -10,6 +10,8 @@ import Cart from "./component/cart/cart"
 import Error from "./component/error/error"
 import RestaurentMenu from "./component/body/RestaurentMenu/restaurentMenu"
 import {createBrowserRouter , RouterProvider , Outlet} from "react-router-dom"
+import { Provider } from "react-redux"
+import appStore from "./utils/appStore"
 
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
@@ -102,8 +104,10 @@ const datas = [
 const Applayout = ()=>{
     return(
        <>
-         <Header/>
-         <Outlet/>
+         <Provider store={appStore}>
+            <Header/>
+            <Outlet/>
+         </Provider>
        </>
     )
 }

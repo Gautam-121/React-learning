@@ -1,53 +1,25 @@
-import "./restaurentContainer.css"
-import RestaurentCart from "./RestaurentCart/restaurentCart.jsx"
-import { useEffect, useState } from "react"
-import Shimmer from "../../shimmer/shimmer.jsx"
-import { Link } from "react-router-dom"
+import "./restaurentContainer.css";
+import RestaurentCart from "./restaurentCart.jsx";
+import { Link } from "react-router-dom";
+import useRestaurent from "../../../utils/useRestaurent.js";
+import RestaurentShimmer from "../../shimmer/restaurentShimmer/restaurentShimmer.jsx";
 
-const RestaurentContainer = ()=>{
+const RestaurentContainer = () => {
 
-    const [listOfAllRestaurent , setListOfRestaurent ] = useState([])
-    const [filterRestaurent , setFilteredRestaurent] = useState([])
+  const allRestaurent = useRestaurent();
 
-    const [searchText , setSearchText] = useState("")
+  //Conditional Rendering
+  return allRestaurent.length == 0 ? (
+    <RestaurentShimmer />
+  ) : (
+    <div className="restaurentContainer_wrapper">
+      {allRestaurent.map((restaurent) => (
+        <Link to={"/restaurent/" + restaurent.id} key={restaurent.id}>
+          <RestaurentCart {...restaurent} />
+        </Link>
+      ))}
+    </div>
+  );
+};
 
-    useEffect(()=>{
-        fetchData()
-        console.log("UseEffect Called after Restaurent Render Competely rendered")
-    },[])
-
-    const fetchData = async ()=>{
-        const data =  await fetch(
-            "http://localhost:3000/api/v1/getAllRestaurent")
-        
-        const json = await data.json()
-        setListOfRestaurent(json.restaurent)
-        setFilteredRestaurent(json.restaurent)
-    }
-
-    console.log("Restaurent Rendered")
-
-    //Conditional Rendering
-    return listOfAllRestaurent.length == 0 ? <Shimmer/> : (
-        <div className="restaurentContainer_wrapper"> 
-        <div>
-            <input type="text" placeholder="Search" value={searchText} onChange={(e)=>setSearchText(e.target.value)} onKeyDown={(e)=>{
-               //Click this button i wnat to filter the restaurent according to serachText
-               if(e.key === "Enter"){
-                const filterRestaurent = listOfAllRestaurent.filter((restaurent)=>restaurent.name.toLowerCase().includes(searchText))
-               setFilteredRestaurent(filterRestaurent)
-               }
-
-            }}/>
-        </div>
-            {
-               filterRestaurent.length == 0 ? <h1>No Restaurent Found</h1> : filterRestaurent.map((restaurent)=>(
-                <Link to={"/restaurent/" + restaurent.id} key={restaurent.id}><RestaurentCart  {...restaurent}/>
-                </Link>
-            ))
-            }
-        </div>
-    )
-}
-
-export default RestaurentContainer
+export default RestaurentContainer;

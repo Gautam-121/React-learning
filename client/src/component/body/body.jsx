@@ -1,14 +1,14 @@
-import RestaurentContainer from "./RestaurentContainer/restaurentContainer"
-import Filter from "./filter/filter"
-import "./body.css"
+import RestaurentContainer from "./RestaurentContainer/restaurentContainer";
+import Filter from "./filter/filter";
+import "./body.css";
 
-const Body = ()=>{
-    return(
-        <div className="body_wrapper">
-            <Filter/>
-            <RestaurentContainer/>
-        </div>
-    )
-}
+const Body = () => {
+  return (
+    <div className="body_wrapper">
+      <Filter />
+      <RestaurentContainer />
+    </div>
+  );
+};
 
-export default Body
+export default Body;
