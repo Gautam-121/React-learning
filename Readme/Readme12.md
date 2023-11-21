@@ -233,3 +233,50 @@ for accessing a data from store we used hooks and this hook known as useSelector
     <button onClick={handledItem(item)}>Click<button> //Not work , when passed a argument from it
   )
  }
+
+
+1) # Whenever you used useSelector must select right portion of the store otherwise it has lot of perform loss
+
+- const cartItem = useSelector((store)=>store.cart.items) // Good way to subscribing to perticular part of store
+
+- This is Very less Efficient -- what happen you want to if you update the cartSlice only portion of cartSlice update it not affect on whole store , but in this case if you updated any slice it will update whole store so it has less efficient
+ const store = useSelector((store)=>store) // Is not good way to subscribing to store , using this it has lot of perform loss
+ const cartItem = store.cart.items
+
+2) There are lot of confusion in reducer , reducers
+
+- So whenever you building a appStore , The keyword is known as reducer and this reducer have multiple small reducers
+
+const appStore = configureStore({
+  reducer:{
+    cart : CartSlice,
+    user : userSlice,
+    restaurent : restaurentSlice
+  }
+})
+
+- but when we are creating slice we are creating multiple reducers and whenever you are exporting , you are exporting one reducer from it
+
+- what is reducer at the end of the day -- reducer is nothing but combination of different small reducers
+
+const cartSlice = createSlice({
+  name : "cart",
+  initialState : {
+    items : []
+  },
+  reducers : {
+    addItem : ()=>{
+
+    },
+    removeItem : ()=>{
+      
+    },
+    clearCart : ()=>{
+      
+    }
+  }
+})
+
+export defauct cartSlice.reducer
+export const {addItem , removeItem , clearCart} = cartSlice.actions
+
