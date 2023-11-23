@@ -280,3 +280,53 @@ const cartSlice = createSlice({
 export defauct cartSlice.reducer
 export const {addItem , removeItem , clearCart} = cartSlice.actions
 
+3) whenever you write earlier redux using vanilla redux , redux its shout to there website and it gives you clear warning "Don't mutate the state"
+
+- Earlier we write redux we never modified the state , so however we write the logic
+    
+    - we use to create new state earlier from my state and then i modified my new state
+    and then we return the newState
+
+    const newState = [...state]
+    newState.items.push(action.payload)
+    return newState
+
+  - We do earlier this thing , because redux say don't modified the state
+
+  reducers : {
+        addItem : (state , action)=>{
+
+      -  Vaniala(older) Redux ==>  Don't Mutate The State
+
+      -  we use to create new state earlier from my state and then i modified my new state
+        and then we return the newState
+
+        const newState = [...state]
+        newState.items.push(action.payload)
+        return newState
+
+      -  We do earlier this thing and returning is kind of mandatory , because redux say don't modified the state
+
+      -  In New Redux (ReduxToolKit) --> We have to mutate the state and return is also not mandatory
+
+
+      -  When are mutating the state right here , what does redux do behind the seen , redux do all the thing behind
+        the seen in vanilla redux do by developer
+
+        const newState = [...state]
+        newState.items.push(action.payload)
+        return newState
+
+      -  behind the seen right now redux doing like this , and redux uses something know as immer library to do this 
+
+      -  basically immer library something like finding the difference between original state and the mutating  state
+        and gives you back a new state which is immutatble state which is a new copy of a state
+
+       
+            state.items.push(action.payload)
+        },
+  }
+
+# Redux gives very good dubugging tool called Redux-toolkit , it help us to debugging our redux store 
+
+# Howemork - Read about RTK query (earlier we have middleware and Thunk) No we have RTK query read the RTK query
