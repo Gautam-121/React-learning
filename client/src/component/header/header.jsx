@@ -8,6 +8,8 @@ const Header = () => {
   
   const [focused, setFocused] = useState(false);
 
+  console.log(useState())
+
   return (
     <div className="header_container">
       <div className="header_wrapper">

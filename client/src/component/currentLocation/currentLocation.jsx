@@ -14,6 +14,7 @@ const CurrentLocation = () => {
   const currentLocationHandler = () => {
     setLocationFetch(true);
     navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position)
       setLatitude(position?.coords?.latitude);
       setLongitude(position?.coords?.longitude);
     });
@@ -26,12 +27,10 @@ const CurrentLocation = () => {
   }, [latitude, longitude]);
 
   const fetchCurrentRestaurent = async () => {
-    const getCureentRestaurent = await fetch(
-      `https://www.swiggy.com/mapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}`
-    );
-    const jsonRestaurent = await getCureentRestaurent.json();
-    setRestaurent(jsonRestaurent?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    console.log(jsonRestaurent?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    const getCureentRestaurent = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+    const currentLocationArea = await getCureentRestaurent.json()
+    localStorage.setItem({"latitude" : latitude , "longitude" : longitude})
+    console.log(currentLocationArea)
   };
 
   useEffect(() => {
@@ -67,7 +66,7 @@ const CurrentLocation = () => {
       />
     </div>
   ) : (
-    restaurent.length == 0 ? <div>Fetching Restaurent</div> : <div>Restaurent Fetch Done</div>
+    (latitude=="" && longitude=="") ? <div>Fetching Restaurent</div> : <div>Restaurent Fetch Done</div>
   );
 };
 

@@ -167,3 +167,85 @@ Link begind the seen it use Anchor Tag at the end of the day is nothing bhu a an
 
 
 const {resId} = useParams() --> this resId contain dynamic param value
+
+# What are the different way to add Images to Our App
+
+1) downLoad the image inside the directory then import in the perticular componenet where you used and used The images
+
+import Logo from "../images/logo.png"
+
+<img src={Logo} alt="This is AppLogo"/>
+
+2) Directly used image Url inside the src
+
+<img src="http://funckyImgaes">
+
+or Store this url in contant file and used dynamic variable
+
+constant.js
+   
+   export Logo = "http://funckyImages"
+
+Header.jsx
+
+   import {Logo} from "./constant.js
+   
+   <img src={Logo}>
+
+2) What would happen when you do console.log(useState())
+
+When you do console.log(useState()) it return array in which 0-index contain default value undefined or the value you defined initially and 1-index contain a function that have power that changing your state variable
+
+3) How will useEffect Behave if we don't add dependancy Array
+
+- useEffect(()=>{ useEffect call every time when component render , if we don't add dependancy array
+
+})
+
+4) What is SPA ?
+
+- SPA stands for Single Page Application. It's a web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire new pages from the server. In a traditional multi-page application, each user action (e.g., clicking a link) typically results in a full page reload from the server. In contrast, a SPA loads a single HTML page and dynamically updates the content as the user interacts with the application.
+
+4) What is Difference between Client side Routing and Server side Routing ?
+
+# Client-Side Routing:
+
+1) Execution Location:
+Location: Entirely takes place on the client-side (in the user's browser).
+Responsibility: The client-side framework or library (e.g., React, Vue, Angular) is responsible for managing the routing.
+Navigation Handling:
+
+2) Navigation Handling
+: When the user clicks a link or interacts with the application, the client-side router intercepts the request and updates the view without a full page reload.
+Page Reload: Typically, no full page reload occurs during navigation, resulting in a smoother and more responsive user experience.
+Rendering:
+
+3) Rendering: 
+The client-side router updates the DOM based on the defined routes and components, often using a virtual DOM to efficiently manage updates.
+Data Fetching: Data fetching for a route can be done on-demand as the user navigates.
+Examples:
+
+4) Frameworks: 
+Commonly associated with modern JavaScript frameworks/libraries like React Router, Vue Router, and Angular Router.
+Web Apps: Well-suited for Single Page Applications (SPAs) where a single HTML page is loaded initially, and subsequent content changes are managed dynamically.
+
+# Server-Side Routing:
+
+1) Execution Location:
+Location: Takes place on the server.
+Responsibility: The server is responsible for managing the routing and generating the appropriate HTML pages in response to client requests.
+Navigation Handling:
+
+2) Navigation Handling: 
+When a user clicks a link, a request is sent to the server, which processes the request and returns a new HTML page.
+Page Reload: A full page reload occurs, and the entire HTML document is replaced with the new content.
+Rendering:
+
+3) Rendering: 
+The server generates and renders the HTML for each requested route on the server side.
+Data Fetching: Data fetching and processing occur on the server.
+Examples:
+
+4) Frameworks: 
+Traditional web applications built with server-side frameworks like Express.js (Node.js), Django (Python), Ruby on Rails (Ruby), etc.
+Web Apps: Suited for applications with complex server logic, content that changes less frequently, or scenarios where search engine optimization (SEO) is a critical consideration.
