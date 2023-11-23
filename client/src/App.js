@@ -12,6 +12,7 @@ import RestaurentMenu from "./component/body/RestaurentMenu/restaurentMenu"
 import {createBrowserRouter , RouterProvider , Outlet} from "react-router-dom"
 import { Provider } from "react-redux"
 import appStore from "./utils/appStore"
+import CurrentLocation from "./component/currentLocation/currentLocation"
 
 
 const parent1 = React.createElement("div" , {id : "parent1"} , [
@@ -147,5 +148,6 @@ const appRouter = createBrowserRouter([
 ])
 
 // roots.render(HeadingComponent())
-roots.render(<RouterProvider router={appRouter}/>)
+// roots.render(<RouterProvider router={appRouter}/>)
+roots.render(<CurrentLocation/>)
 // roots.render(<HeadingComponent></HeadingComponent>)

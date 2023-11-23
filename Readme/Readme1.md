@@ -75,6 +75,8 @@ so,
 Access-control-Allow-Origin = domain A
 Access-control-allow-method = Get
 
+
+
 if domain B , accept the request so the demain B tic this header it allow the request send By Domain A So it sets,
 Access-control-Allow-Origin = domain A for specific domain or * for all domain
 Access-control-Allow-Origin = Get , Post or * for all method
