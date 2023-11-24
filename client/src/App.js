@@ -148,6 +148,6 @@ const appRouter = createBrowserRouter([
 ])
 
 // roots.render(HeadingComponent())
-// roots.render(<RouterProvider router={appRouter}/>)
-roots.render(<CurrentLocation/>)
+roots.render(<RouterProvider router={appRouter}/>)
+// roots.render(<CurrentLocation/>)
 // roots.render(<HeadingComponent></HeadingComponent>)

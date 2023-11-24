@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
-import useRestaurent from "../../utils/useRestaurent";
-
-const apiKey = "";
+import { useNavigate } from "react-router-dom";
 
 const CurrentLocation = () => {
+
   const [longitude, setLongitude] = useState("");
   const [latitude, setLatitude] = useState("");
+  const [locationFetch, setLocationFetch] = useState(false);
+
   const [searchArea, setSearchArea] = useState("");
   const [currentAddress, setCurrentAddress] = useState("");
-  const [restaurent, setRestaurent] = useState([]);
-  const [locationFetch, setLocationFetch] = useState(false);
+
+  const navigate = useNavigate()
 
   const currentLocationHandler = () => {
     setLocationFetch(true);
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position)
       setLatitude(position?.coords?.latitude);
       setLongitude(position?.coords?.longitude);
     });
@@ -22,16 +22,11 @@ const CurrentLocation = () => {
 
   useEffect(() => {
     if (latitude != "" && longitude != "") {
-      fetchCurrentRestaurent();
-    }
+      const data = JSON.stringify({"latitude" : latitude , "longitude" : longitude})
+      localStorage.setItem("location" , data) 
+     }
   }, [latitude, longitude]);
 
-  const fetchCurrentRestaurent = async () => {
-    const getCureentRestaurent = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
-    const currentLocationArea = await getCureentRestaurent.json()
-    localStorage.setItem({"latitude" : latitude , "longitude" : longitude})
-    console.log(currentLocationArea)
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,7 +61,7 @@ const CurrentLocation = () => {
       />
     </div>
   ) : (
-    (latitude=="" && longitude=="") ? <div>Fetching Restaurent</div> : <div>Restaurent Fetch Done</div>
+    (latitude=="" && longitude=="") ? <div>Fetching Restaurent</div> : navigate("/")
   );
 };
 

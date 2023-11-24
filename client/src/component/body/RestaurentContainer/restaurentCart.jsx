@@ -9,6 +9,7 @@ const RestaurentCart = ({
   cuisines,
   deliveryTime,
 }) => {
+  console.log(cuisines)
   return (
     <div className="restaurentCart_wrapper">
       <img

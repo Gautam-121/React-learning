@@ -8,14 +8,16 @@ const RestaurentContainer = () => {
 
   const allRestaurent = useRestaurent();
 
+  console.log("allRestaurent" , allRestaurent)
+
   //Conditional Rendering
-  return allRestaurent.length == 0 ? (
+  return (!allRestaurent || allRestaurent.length == 0) ? (
     <RestaurentShimmer />
   ) : (
     <div className="restaurentContainer_wrapper">
       {allRestaurent.map((restaurent) => (
         <Link to={"/restaurent/" + restaurent.id} key={restaurent.id}>
-          <RestaurentCart {...restaurent} />
+          <RestaurentCart {...restaurent.info} />
         </Link>
       ))}
     </div>
